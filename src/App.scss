@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "ABeeZee", sans-serif;
+}
+
+.container {
+  width: 50%;
+  height: 100vh;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    width: 40%;
+    height: 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    &:focus {
+      outline: 0.2em solid indigo;
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  & .result {
+    height: 1.5em;
+    font-size: larger;
+    margin-bottom: 1rem;
+  }
+
+  & .about {
+    margin-top: 5em;
+    font-size: large;
+  }
+}
