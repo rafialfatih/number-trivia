@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
 
-function App() {
+const App = () => {
+  const [number, setNumber] = useState(0);
+  const [state, setState] = useState({ data: "", loading: true });
+
+  useEffect(() => {
+    setState({ data: "", loading: true });
+    fetch(`http://numbersapi.com/${number}/trivia`)
+      .then((res) => res.text())
+      .then((result) => setState({ data: result, loading: false }));
+  }, [number, setState]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <input
+        type="number"
+        name="numberTrivia"
+        onChange={(e) => setNumber(e.target.value)}
+        value={number}
+      />
+      {number === "" ? (
+        <p>Invalid data, please enter a number!</p>
+      ) : state.loading ? (
+        <p>loading...</p>
+      ) : (
+        <p>{state.data}</p>
+      )}
     </div>
   );
-}
+};
 
 export default App;
