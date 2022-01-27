@@ -43,15 +43,15 @@
       transition: 0.2s ease-in-out;
     }
   }
+}
 
-  & .result {
-    height: 1.5em;
-    font-size: larger;
-    margin-bottom: 1rem;
-  }
+.result {
+  height: 1.5em;
+  font-size: larger;
+  margin-bottom: 1rem;
+}
 
-  & .about {
-    margin-top: 5em;
-    font-size: large;
-  }
+.about {
+  margin-top: 5em;
+  font-size: large;
 }
