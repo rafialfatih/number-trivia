@@ -6,7 +6,9 @@ const App = () => {
 
   useEffect(() => {
     setState({ data: "", loading: true });
-    fetch(`http://numbersapi.com/${number}/trivia`)
+    fetch(`http://numbersapi.com/${number}/trivia`, {
+      referrerPolicy: "unsafe-url",
+    })
       .then((res) => res.text())
       .then((result) => setState({ data: result, loading: false }));
   }, [number, setState]);
