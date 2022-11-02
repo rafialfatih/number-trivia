@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const [number, setNumber] = useState(0);
@@ -23,7 +23,7 @@ const App = () => {
         />
         <div className="result">
           {number === "" ? (
-            <p>Invalid data, please enter a number!</p>
+            <p>Enter a number!</p>
           ) : state.loading ? (
             <p>loading...</p>
           ) : (
